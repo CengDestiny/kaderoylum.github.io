@@ -1,185 +1,371 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Operatör Davranışı Tahmini | Kader Nikbay Oylum</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kader Nikbay Oylum | Doktora Tezi Proje Tanıtımı</title>
+
   <style>
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f7f7f7;
-      color: #222;
-      line-height: 1.6;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.7;
     }
+
     header {
-      background: #1f2937;
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
       color: white;
-      padding: 60px 20px;
+      padding: 80px 20px 70px;
       text-align: center;
     }
-    nav {
-      background: #111827;
-      padding: 12px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-      background: white;
-      margin-top: 20px;
-      border-radius: 12px;
-    }
-    h1, h2 {
-      color: #111827;
-    }
-    header h1 {
-      color: white;
-    }
-    .tag {
+
+    header .badge {
       display: inline-block;
-      background: #e5e7eb;
-      padding: 8px 12px;
-      border-radius: 20px;
-      margin: 5px;
+      background: rgba(255,255,255,0.15);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      max-width: 1000px;
+      margin: auto;
+      font-size: 42px;
+      line-height: 1.2;
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 25px auto 0;
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: white;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      text-align: center;
+      padding: 14px;
+    }
+
+    nav a {
+      color: #1e3a8a;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 600;
       font-size: 14px;
     }
-    .metric {
-      font-size: 28px;
-      font-weight: bold;
-      color: #2563eb;
+
+    .container {
+      max-width: 1120px;
+      margin: auto;
+      padding: 40px 20px;
     }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      color: #0f172a;
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    h3 {
+      color: #1d4ed8;
+      margin-bottom: 8px;
+    }
+
+    .hero-metrics {
+      margin-top: 35px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+    }
+
+    .metric {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 30px;
+      margin-bottom: 5px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e0ecff;
+      color: #1e40af;
+      padding: 8px 13px;
+      border-radius: 999px;
+      margin: 5px 5px 5px 0;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .timeline {
+      border-left: 4px solid #2563eb;
+      padding-left: 22px;
+    }
+
+    .step {
+      margin-bottom: 22px;
+      position: relative;
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      left: -34px;
+      top: 7px;
+      width: 16px;
+      height: 16px;
+      background: #2563eb;
+      border-radius: 50%;
+    }
+
+    .highlight {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
     footer {
+      background: #0f172a;
+      color: white;
       text-align: center;
-      padding: 30px;
-      color: #555;
+      padding: 35px 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 700px) {
+      header h1 { font-size: 30px; }
+      nav a { display: inline-block; margin: 6px; }
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <p>Doktora Tezinin Sade Proje Tanıtımı</p>
-  <h1>Elektrikli El Aletlerini Kullanan Operatörlerin Davranışı Yapay Zekâ ile Tahmin Edilebilir mi?</h1>
-  <p>Kader Nikbay Oylum · Bilgisayar Mühendisliği Doktora Tezi</p>
+  <div class="badge">Doktora Tezi Proje Tanıtımı</div>
+  <h1>Üretim Hattında Elektrikli El Aletlerini Kullanan Kişilerin Davranışlarının Yapay Zekâ ile Tahmin Edilmesi</h1>
+  <p>
+    Sensör verileri, el hareketi koordinatları ve anket verilerinin veri füzyonu yaklaşımıyla birleştirilerek
+    operatör deneyim seviyesinin derin öğrenme modelleriyle tahmin edilmesine yönelik özgün bir doktora çalışması.
+  </p>
+
+  <div class="hero-metrics">
+    <div class="metric">
+      <strong>64</strong>
+      <span>Katılımcıdan saha verisi</span>
+    </div>
+    <div class="metric">
+      <strong>3</strong>
+      <span>Derin öğrenme modeli</span>
+    </div>
+    <div class="metric">
+      <strong>%91,67</strong>
+      <span>En yüksek doğruluk oranı</span>
+    </div>
+  </div>
 </header>
 
 <nav>
-  <a href="#sorun">Sorun</a>
-  <a href="#cozum">Çözüm</a>
+  <a href="#ozet">Özet</a>
+  <a href="#problem">Problem</a>
   <a href="#yontem">Yöntem</a>
-  <a href="#sonuc">Sonuçlar</a>
-  <a href="#sss">SSS</a>
+  <a href="#yenilik">Yenilik</a>
+  <a href="#sonuc">Sonuç</a>
+  <a href="#fayda">Fayda</a>
 </nav>
 
-<section>
-  <h2>Projenin Ana Mesajı</h2>
-  <p>
-    Bu çalışma, üretim hatlarında elektrikli el aleti kullanan operatörlerin davranışlarının
-    sensör verileri, el hareketi koordinatları ve anket verileri birlikte kullanılarak
-    yapay zekâ yöntemleriyle tahmin edilebileceğini göstermektedir.
-  </p>
-  <span class="tag">Endüstri 4.0</span>
-  <span class="tag">Veri Füzyonu</span>
-  <span class="tag">Zaman Serisi</span>
-  <span class="tag">Derin Öğrenme</span>
-  <span class="tag">CNN-LSTM-Attention</span>
-</section>
+<div class="container">
 
-<section id="sorun">
-  <h2>Sorun</h2>
-  <p>
-    Üretim hatlarında kalite, verimlilik ve iş güvenliği yalnızca makinelerin performansına
-    bağlı değildir. Elektrikli el aletlerini kullanan operatörlerin deneyimi, tutuş biçimi,
-    hareket kararlılığı ve işlem sırasındaki davranışları da üretim sonucunu etkiler.
-  </p>
-  <p>
-    Ancak bu davranışlar çoğu zaman gözleme dayalı ve öznel biçimde değerlendirilir.
-    Bu nedenle insan kaynaklı farklılıkların ölçülebilir, tekrarlanabilir ve veri temelli
-    yöntemlerle analiz edilmesine ihtiyaç vardır.
-  </p>
-</section>
+  <section id="ozet" class="card">
+    <h2>Proje Özeti</h2>
+    <p>
+      Bu doktora çalışmasında, üretim hatlarında kullanılan elektrikli el aletlerini kullanan operatörlerin
+      davranışlarının ve deneyim seviyelerinin veri temelli olarak tahmin edilmesine yönelik yapay zekâ tabanlı
+      bir yöntem geliştirilmiştir.
+    </p>
+    <p>
+      Çalışmada elektrikli vidalama el aletinden elde edilen sensör verileri, kamera görüntülerinden çıkarılan
+      el eklem koordinatları ve kullanıcı anketlerinden elde edilen bilgiler birlikte değerlendirilmiştir.
+      Böylece insan-makine etkileşimi çok modlu bir veri yapısı üzerinden modellenmiştir.
+    </p>
 
-<section id="cozum">
-  <h2>Çözüm</h2>
-  <p>
-    Doktora tezi kapsamında, elektrikli vidalama el aletinden elde edilen sensör verileri,
-    kamera görüntülerinden çıkarılan el eklem koordinatları ve kullanıcı anketlerinden
-    elde edilen bilgiler bir araya getirilmiştir.
-  </p>
-  <p>
-    Bu çok modlu veri yapısı kullanılarak operatörlerin deneyim seviyelerini sınıflandıran
-    ve davranış örüntülerini analiz eden yapay zekâ tabanlı bir yöntem geliştirilmiştir.
-  </p>
-</section>
+    <div>
+      <span class="tag">Endüstri 4.0</span>
+      <span class="tag">Endüstri 5.0</span>
+      <span class="tag">Veri Füzyonu</span>
+      <span class="tag">Zaman Serisi</span>
+      <span class="tag">Derin Öğrenme</span>
+      <span class="tag">CNN-LSTM-Attention</span>
+    </div>
+  </section>
 
-<section id="yontem">
-  <h2>Nasıl Çalışıyor?</h2>
-  <ol>
-    <li>Elektrikli el aletinden akım, gerilim, ivme ve jiroskop verileri toplanır.</li>
-    <li>Kamera görüntülerinden MediaPipe ile el eklem noktalarının koordinatları çıkarılır.</li>
-    <li>Kullanıcı anketleri ile deneyim düzeyine ilişkin bilgiler elde edilir.</li>
-    <li>Veriler ön işleme, öznitelik çıkarımı ve kaydırmalı pencere yöntemiyle zaman serisine dönüştürülür.</li>
-    <li>1D CNN, BiLSTM ve CNN-LSTM-Attention modelleri karşılaştırılır.</li>
-    <li>En başarılı model bağımsız gerçek saha verileri üzerinde doğrulanır.</li>
-  </ol>
-</section>
+  <section id="problem" class="card">
+    <h2>Problem</h2>
+    <p>
+      Üretim ortamlarında kalite, verimlilik ve iş güvenliği yalnızca makine performansına bağlı değildir.
+      Operatörün deneyimi, tutuş biçimi, hareket kararlılığı ve işlem sırasındaki davranışları da üretim
+      çıktıları üzerinde doğrudan etkilidir.
+    </p>
+    <p>
+      Ancak operatör davranışları çoğu zaman gözleme dayalı ve öznel biçimde değerlendirilmektedir.
+      Bu nedenle insan kaynaklı farklılıkların ölçülebilir, tekrarlanabilir ve veri temelli yöntemlerle
+      analiz edilmesine ihtiyaç vardır.
+    </p>
+  </section>
 
-<section id="sonuc">
-  <h2>Sonuçlar</h2>
-  <p>
-    Çalışmada geliştirilen modeller bağımsız gerçek veriler üzerinde test edilmiştir.
-    CNN-LSTM-Attention mimarisi en yüksek başarıyı göstermiştir.
-  </p>
-  <p class="metric">%91,67 doğruluk</p>
-  <p>
-    Bu sonuç, insan-makine etkileşiminin çok modlu veri füzyonu ve derin öğrenme
-    yöntemleriyle başarılı biçimde modellenebileceğini ortaya koymaktadır.
-  </p>
-</section>
+  <section id="yontem" class="card">
+    <h2>Yöntem ve Teknolojik Yaklaşım</h2>
 
-<section>
-  <h2>Yaratılan Fayda</h2>
-  <p>
-    Geliştirilen yöntem; operatör eğitim ihtiyaçlarının belirlenmesi, insan kaynaklı kalite
-    farklılıklarının erken tespiti, iş güvenliği risklerinin öngörülmesi ve üretim süreçlerinde
-    veri temelli karar destek mekanizmalarının geliştirilmesi için kullanılabilecek potansiyele sahiptir.
-  </p>
-</section>
+    <div class="timeline">
+      <div class="step">
+        <h3>1. Veri Toplama</h3>
+        <p>
+          Elektrikli el aletinden akım, gerilim, ivmeölçer ve jiroskop verileri toplanmıştır.
+          Operatörlerin el hareketleri ise kamera görüntülerinden çıkarılan el eklem koordinatları ile temsil edilmiştir.
+        </p>
+      </div>
 
-<section id="sss">
-  <h2>SSS</h2>
+      <div class="step">
+        <h3>2. El Hareketi Analizi</h3>
+        <p>
+          MediaPipe kütüphanesi kullanılarak el eklem noktalarının koordinatları elde edilmiş,
+          görüntü pikselleri doğrudan işlenmemiştir. Böylece davranış örüntüleri zaman serisi biçiminde modellenmiştir.
+        </p>
+      </div>
 
-  <h3>Bu çalışma bitmiş bir ürün mü?</h3>
-  <p>
-    Bu çalışma doktora tezi kapsamında geliştirilmiş araştırma temelli bir yöntemdir.
-    Gerçek saha uygulamaları için daha geniş veri kümeleri ve operasyonel entegrasyon çalışmaları gereklidir.
-  </p>
+      <div class="step">
+        <h3>3. Veri Füzyonu</h3>
+        <p>
+          Sensör verileri, el koordinatları ve anket verileri birlikte değerlendirilerek operatör davranışını
+          temsil eden bütünleşik bir veri seti oluşturulmuştur.
+        </p>
+      </div>
 
-  <h3>Görüntüler doğrudan mı işlendi?</h3>
-  <p>
-    Hayır. Görüntü pikselleri doğrudan kullanılmamış, kamera görüntülerinden el eklem
-    koordinatları çıkarılarak zaman serisi verilerine dönüştürülmüştür.
-  </p>
+      <div class="step">
+        <h3>4. Derin Öğrenme Modelleri</h3>
+        <p>
+          1D CNN, BiLSTM ve CNN-LSTM-Attention mimarileri geliştirilmiş ve karşılaştırmalı olarak değerlendirilmiştir.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <h3>Bu yöntem neden yenilikçi?</h3>
-  <p>
-    Çünkü operatör davranışını tek bir veri kaynağıyla değil; sensör, el hareketi koordinatları
-    ve anket verilerini birlikte kullanarak analiz etmektedir.
-  </p>
-</section>
+  <section id="yenilik" class="card">
+    <h2>Yenilik ve Farklılıklar</h2>
+    <div class="grid">
+      <div>
+        <h3>Çok Modlu Veri Kullanımı</h3>
+        <p>
+          Operatör davranışı yalnızca tek bir veri kaynağıyla değil, sensör, el hareketi koordinatları
+          ve anket verilerinin birlikte kullanılmasıyla analiz edilmiştir.
+        </p>
+      </div>
+
+      <div>
+        <h3>Zaman Serisi Tabanlı Modelleme</h3>
+        <p>
+          Davranış örüntüleri zaman bağımlılığı korunarak modellenmiş, kaydırmalı pencere yaklaşımıyla
+          derin öğrenme modellerine uygun veri yapıları oluşturulmuştur.
+        </p>
+      </div>
+
+      <div>
+        <h3>Dikkat Mekanizması</h3>
+        <p>
+          CNN-LSTM-Attention modeli ile davranış içindeki önemli örüntülerin daha etkin öğrenilmesi sağlanmıştır.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sonuc" class="card">
+    <h2>Sonuçlar</h2>
+    <p>
+      Çalışmada geliştirilen modeller bağımsız gerçek saha verileri üzerinde test edilmiştir.
+      En başarılı sonuç CNN-LSTM-Attention mimarisi ile elde edilmiştir.
+    </p>
+
+    <div class="highlight">
+      <h3>%91,67 Doğruluk</h3>
+      <p>
+        CNN-LSTM-Attention modeli, bağımsız doğrulama verisi üzerinde en yüksek performansı göstermiştir.
+        Bu sonuç, insan-makine etkileşiminin çok modlu veri füzyonu ve derin öğrenme yöntemleriyle
+        başarılı biçimde modellenebileceğini ortaya koymaktadır.
+      </p>
+    </div>
+  </section>
+
+  <section id="fayda" class="card">
+    <h2>Etki Gücü ve Katma Değer</h2>
+    <p>
+      Geliştirilen yöntem; operatör eğitim ihtiyaçlarının belirlenmesi, insan kaynaklı kalite farklılıklarının
+      erken tespit edilmesi, iş güvenliği risklerinin öngörülmesi ve üretim süreçlerinde veri temelli karar
+      destek mekanizmalarının geliştirilmesi için kullanılabilecek potansiyele sahiptir.
+    </p>
+    <p>
+      Çalışma, insan davranışlarının ölçülebilir ve bilimsel yöntemlerle analiz edilebileceğini göstererek,
+      Endüstri 4.0 ve Endüstri 5.0 kapsamında insan odaklı dijital dönüşüm uygulamalarına katkı sunmaktadır.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Sık Sorulan Sorular</h2>
+
+    <h3>Bu çalışma bir ürün müdür?</h3>
+    <p>
+      Bu çalışma doktora tezi kapsamında geliştirilmiş araştırma temelli bir yöntemdir.
+      Gerçek saha uygulamaları için daha geniş veri kümeleri ve entegrasyon çalışmaları ile geliştirilebilir.
+    </p>
+
+    <h3>Görüntüler doğrudan mı kullanıldı?</h3>
+    <p>
+      Hayır. Görüntü pikselleri doğrudan işlenmemiş, görüntülerden el eklem koordinatları çıkarılarak
+      zaman serisi verilerine dönüştürülmüştür.
+    </p>
+
+    <h3>Çalışmanın özgün yönü nedir?</h3>
+    <p>
+      Elektrikli el aletlerini kullanan operatör davranışlarının sensör, el hareketi koordinatı ve anket
+      verilerinin birlikte kullanıldığı çok modlu veri füzyonu yaklaşımıyla modellenmesidir.
+    </p>
+  </section>
+
+</div>
 
 <footer>
-  <p>
-    Kader Nikbay Oylum · Doktora Tezi Proje Tanıtım Sayfası · 2025
-  </p>
+  <p><strong>Kader Nikbay Oylum</strong></p>
+  <p>Bilgisayar Mühendisliği Doktora Tezi Proje Tanıtım Sayfası</p>
+  <p>İstanbul Okan Üniversitesi · 2025</p>
 </footer>
 
 </body>
