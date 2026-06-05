@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operatör Davranışı Tahmini | Kader Nikbay Oylum</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    nav {
+      background: #111827;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      background: white;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+    h1, h2 {
+      color: #111827;
+    }
+    header h1 {
+      color: white;
+    }
+    .tag {
+      display: inline-block;
+      background: #e5e7eb;
+      padding: 8px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 14px;
+    }
+    .metric {
+      font-size: 28px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p>Doktora Tezinin Sade Proje Tanıtımı</p>
+  <h1>Elektrikli El Aletlerini Kullanan Operatörlerin Davranışı Yapay Zekâ ile Tahmin Edilebilir mi?</h1>
+  <p>Kader Nikbay Oylum · Bilgisayar Mühendisliği Doktora Tezi</p>
+</header>
+
+<nav>
+  <a href="#sorun">Sorun</a>
+  <a href="#cozum">Çözüm</a>
+  <a href="#yontem">Yöntem</a>
+  <a href="#sonuc">Sonuçlar</a>
+  <a href="#sss">SSS</a>
+</nav>
+
+<section>
+  <h2>Projenin Ana Mesajı</h2>
+  <p>
+    Bu çalışma, üretim hatlarında elektrikli el aleti kullanan operatörlerin davranışlarının
+    sensör verileri, el hareketi koordinatları ve anket verileri birlikte kullanılarak
+    yapay zekâ yöntemleriyle tahmin edilebileceğini göstermektedir.
+  </p>
+  <span class="tag">Endüstri 4.0</span>
+  <span class="tag">Veri Füzyonu</span>
+  <span class="tag">Zaman Serisi</span>
+  <span class="tag">Derin Öğrenme</span>
+  <span class="tag">CNN-LSTM-Attention</span>
+</section>
+
+<section id="sorun">
+  <h2>Sorun</h2>
+  <p>
+    Üretim hatlarında kalite, verimlilik ve iş güvenliği yalnızca makinelerin performansına
+    bağlı değildir. Elektrikli el aletlerini kullanan operatörlerin deneyimi, tutuş biçimi,
+    hareket kararlılığı ve işlem sırasındaki davranışları da üretim sonucunu etkiler.
+  </p>
+  <p>
+    Ancak bu davranışlar çoğu zaman gözleme dayalı ve öznel biçimde değerlendirilir.
+    Bu nedenle insan kaynaklı farklılıkların ölçülebilir, tekrarlanabilir ve veri temelli
+    yöntemlerle analiz edilmesine ihtiyaç vardır.
+  </p>
+</section>
+
+<section id="cozum">
+  <h2>Çözüm</h2>
+  <p>
+    Doktora tezi kapsamında, elektrikli vidalama el aletinden elde edilen sensör verileri,
+    kamera görüntülerinden çıkarılan el eklem koordinatları ve kullanıcı anketlerinden
+    elde edilen bilgiler bir araya getirilmiştir.
+  </p>
+  <p>
+    Bu çok modlu veri yapısı kullanılarak operatörlerin deneyim seviyelerini sınıflandıran
+    ve davranış örüntülerini analiz eden yapay zekâ tabanlı bir yöntem geliştirilmiştir.
+  </p>
+</section>
+
+<section id="yontem">
+  <h2>Nasıl Çalışıyor?</h2>
+  <ol>
+    <li>Elektrikli el aletinden akım, gerilim, ivme ve jiroskop verileri toplanır.</li>
+    <li>Kamera görüntülerinden MediaPipe ile el eklem noktalarının koordinatları çıkarılır.</li>
+    <li>Kullanıcı anketleri ile deneyim düzeyine ilişkin bilgiler elde edilir.</li>
+    <li>Veriler ön işleme, öznitelik çıkarımı ve kaydırmalı pencere yöntemiyle zaman serisine dönüştürülür.</li>
+    <li>1D CNN, BiLSTM ve CNN-LSTM-Attention modelleri karşılaştırılır.</li>
+    <li>En başarılı model bağımsız gerçek saha verileri üzerinde doğrulanır.</li>
+  </ol>
+</section>
+
+<section id="sonuc">
+  <h2>Sonuçlar</h2>
+  <p>
+    Çalışmada geliştirilen modeller bağımsız gerçek veriler üzerinde test edilmiştir.
+    CNN-LSTM-Attention mimarisi en yüksek başarıyı göstermiştir.
+  </p>
+  <p class="metric">%91,67 doğruluk</p>
+  <p>
+    Bu sonuç, insan-makine etkileşiminin çok modlu veri füzyonu ve derin öğrenme
+    yöntemleriyle başarılı biçimde modellenebileceğini ortaya koymaktadır.
+  </p>
+</section>
+
+<section>
+  <h2>Yaratılan Fayda</h2>
+  <p>
+    Geliştirilen yöntem; operatör eğitim ihtiyaçlarının belirlenmesi, insan kaynaklı kalite
+    farklılıklarının erken tespiti, iş güvenliği risklerinin öngörülmesi ve üretim süreçlerinde
+    veri temelli karar destek mekanizmalarının geliştirilmesi için kullanılabilecek potansiyele sahiptir.
+  </p>
+</section>
+
+<section id="sss">
+  <h2>SSS</h2>
+
+  <h3>Bu çalışma bitmiş bir ürün mü?</h3>
+  <p>
+    Bu çalışma doktora tezi kapsamında geliştirilmiş araştırma temelli bir yöntemdir.
+    Gerçek saha uygulamaları için daha geniş veri kümeleri ve operasyonel entegrasyon çalışmaları gereklidir.
+  </p>
+
+  <h3>Görüntüler doğrudan mı işlendi?</h3>
+  <p>
+    Hayır. Görüntü pikselleri doğrudan kullanılmamış, kamera görüntülerinden el eklem
+    koordinatları çıkarılarak zaman serisi verilerine dönüştürülmüştür.
+  </p>
+
+  <h3>Bu yöntem neden yenilikçi?</h3>
+  <p>
+    Çünkü operatör davranışını tek bir veri kaynağıyla değil; sensör, el hareketi koordinatları
+    ve anket verilerini birlikte kullanarak analiz etmektedir.
+  </p>
+</section>
+
+<footer>
+  <p>
+    Kader Nikbay Oylum · Doktora Tezi Proje Tanıtım Sayfası · 2025
+  </p>
+</footer>
+
+</body>
+</html>
