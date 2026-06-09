@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TBD İstanbul Bilişim Yıldızları 2026 | Kader Nikbay Oylum</title>
+
+  <style>
+    :root {
+      --primary: #07182f;
+      --secondary: #0f766e;
+      --accent: #22c55e;
+      --gold: #f59e0b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #07182f, #0f766e);
+      color: white;
+      padding: 70px 8%;
+    }
+
+    header h1 {
+      font-size: clamp(38px, 6vw, 70px);
+      line-height: 1.1;
+      margin-bottom: 25px;
+      font-weight: 900;
+    }
+
+    header p {
+      font-size: 21px;
+      max-width: 1000px;
+      color: #dbeafe;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .hero-grid {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .hero-card strong {
+      display: block;
+      color: #bbf7d0;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 8%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: 0 8px 20px rgba(15,23,42,0.06);
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      background: #f1f5f9;
+      padding: 8px 13px;
+      border-radius: 999px;
+    }
+
+    nav a:hover {
+      background: var(--secondary);
+      color: white;
+    }
+
+    main {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      padding: 55px 0;
+    }
+
+    section {
+      background: white;
+      margin-bottom: 38px;
+      border-radius: 28px;
+      padding: 46px;
+      border: 1px solid var(--border);
+      box-shadow: 0 15px 35px rgba(15,23,42,0.07);
+    }
+
+    .section-heading {
+      margin-bottom: 32px;
+      border-bottom: 5px solid var(--secondary);
+      padding-bottom: 18px;
+    }
+
+    .section-number {
+      display: inline-block;
+      font-size: 24px;
+      font-weight: 900;
+      color: white;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      padding: 8px 18px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1.1;
+      color: var(--primary);
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    h3 {
+      margin-top: 25px;
+      margin-bottom: 12px;
+      color: var(--secondary);
+      font-size: 26px;
+      font-weight: 900;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    ul, ol {
+      margin-left: 24px;
+      margin-bottom: 18px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 18px;
+      margin: 28px 0;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #ecfeff, #f0fdf4);
+      border: 1px solid #ccfbf1;
+      border-radius: 22px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 34px;
+      color: var(--secondary);
+      font-weight: 900;
+    }
+
+    .stat-card span {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 15px;
+      font-size: 17px;
+    }
+
+    td {
+      border: 1px solid var(--border);
+      padding: 14px;
+      font-size: 17px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .image-box {
+      border: 2px dashed #cbd5e1;
+      border-radius: 22px;
+      padding: 25px;
+      text-align: center;
+      background: #f8fafc;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #0f766e, #07182f);
+      color: white;
+      border-radius: 28px;
+      padding: 40px;
+      margin-top: 35px;
+    }
+
+    .cta h3 {
+      color: white;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 45px 8%;
+      text-align: center;
+    }
+
+    footer p {
+      color: #dbeafe;
+    }
+
+    @media (max-width: 700px) {
+      section {
+        padding: 30px 24px;
+      }
+
+      h2 {
+        font-size: 34px;
+      }
+
+      .section-number {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="badge">TBD İstanbul Bilişim Yıldızları 2026 Aday Projesi</div>
+  <h1>Endüstriyel Operatör Deneyim Sınıflandırması İçin Çok Kipli Yapay Zekâ Sistemi</h1>
+  <p>
+    Sensör, kamera ve anket verilerini birleştirerek elektrikli vidalama el aletlerini kullanan operatörlerin
+    Acemi, Orta ve Uzman deneyim düzeylerini sınıflandıran doktora tez çalışması.
+  </p>
+
+  <div class="hero-grid">
+    <div class="hero-card"><strong>Başvuru Düzeyi</strong>Üniversite Projeleri</div>
+    <div class="hero-card"><strong>Başvuru Alanı</strong>Büyük Veri, Yapay Zekâ, Makine Öğrenmesi ve Veri Madenciliği</div>
+    <div class="hero-card"><strong>Öğrenci</strong>Kader Nikbay Oylum</div>
+    <div class="hero-card"><strong>Danışman</strong>Prof. Dr. Turgay Tugay BİLGİN</div>
+    <div class="hero-card"><strong>Üniversite</strong>İstanbul Okan Üniversitesi, Bilgisayar Mühendisliği Doktora Programı</div>
+    <div class="hero-card"><strong>Endüstriyel Ortak</strong>Trex Dijital Akıllı Üretim Sistemleri A.Ş.</div>
+    <div class="hero-card"><strong>Saha Veri Ortakları</strong>Sarıgözoğlu Hidrolik Makina ve Castrol Madeni Yağlar</div>
+    <div class="hero-card"><strong>Tez Tarihi</strong>Aralık 2025</div>
+  </div>
+</header>
+
+<nav>
+  <a href="#amac">1. Amaç</a>
+  <a href="#kapsam">2. Kapsam</a>
+  <a href="#ozgun">3. Özgün Yönler</a>
+  <a href="#yenilik">4. Yenilik</a>
+  <a href="#yontem">5. Yöntem</a>
+  <a href="#etki">6. Etki</a>
+  <a href="#katma">7. Katma Değer</a>
+  <a href="#toplumsal">8. Toplumsal Fayda</a>
+  <a href="#basari">9. Başarı</a>
+  <a href="#sunus">10. Sunuş</a>
+</nav>
+
+<main>
+
+<section id="amac">
+  <div class="section-heading">
+    <div class="section-number">01</div>
+    <h2>Amaç ve Hedefler</h2>
+  </div>
+
+  <p>Bu projenin temel amacı, mevcut elektrikli vidalama el aletlerini sensör ve yazılım desteğiyle akıllandırarak operatör deneyim düzeyini nesnel biçimde sınıflandıran bir yapay zekâ sistemi geliştirmektir.</p>
+
+  <ol>
+    <li><strong>Akıllandırma:</strong> Mevcut, akıllı olmayan elektrikli vidalama el aletlerinin tamamen yenilenmesine gerek kalmadan dijital sürece dahil edilmesi.</li>
+    <li><strong>Operatör Deneyim Sınıflandırması:</strong> Operatörlerin Acemi, Orta ve Uzman deneyim düzeylerini ayırt eden derin öğrenme modeli geliştirilmesi.</li>
+    <li><strong>Çok Kipli Veri Füzyonu:</strong> IMU, elektriksel veri, kamera tabanlı el eklem koordinatları ve anket verilerinin birlikte değerlendirilmesi.</li>
+    <li><strong>Endüstri 4.0 Karar Desteği:</strong> Kalite sapmalarının erken uyarılması, operatör eğitiminin desteklenmesi ve insan-robot iş birliği senaryolarının güçlendirilmesi.</li>
+  </ol>
+</section>
+
+<section id="kapsam">
+  <div class="section-heading">
+    <div class="section-number">02</div>
+    <h2>Kapsam</h2>
+  </div>
+
+  <p><strong>Hedef Kullanıcılar:</strong> Otomotiv ve beyaz eşya yan sanayi, savunma sanayi tedarik zinciri, mesleki eğitim merkezleri, insan kaynakları, iş sağlığı ve güvenliği birimleri, insan-robot iş birliği hatları ve akıllı el aleti üreticileri.</p>
+
+  <div class="stats">
+    <div class="stat-card"><strong>64</strong><span>Katılımcı</span></div>
+    <div class="stat-card"><strong>104.253</strong><span>Gerçek Üretim Verisi</span></div>
+    <div class="stat-card"><strong>3.326</strong><span>Zaman Penceresi</span></div>
+    <div class="stat-card"><strong>21</strong><span>El Eklem Noktası</span></div>
+  </div>
+
+  <ul>
+    <li>64 katılımcı: Sarıgözoğlu 31, Castrol 33.</li>
+    <li>9 eksenli IMU, 21 el eklem noktası ve 4 elektriksel parametre eş zamanlı işlenebilir.</li>
+    <li>600 örneklik, yaklaşık 12 saniyelik pencerelerle gerçek zamana yakın sınıflandırma yapılabilir.</li>
+    <li>Çıkarım standart yerel bilgisayarda çalışabilir; eğitim için bulut GPU yeterlidir.</li>
+  </ul>
+
+  <p><strong>Sınırlılıklar:</strong> Sistem tek tip vidalama aleti üzerinde test edilmiştir. Farklı el aletleri için yeniden eğitim gerekebilir. Ham video ve ses sinyalleri kullanılmamıştır.</p>
+</section>
+
+<section id="ozgun">
+  <div class="section-heading">
+    <div class="section-number">03</div>
+    <h2>Projenin Yerli, Milli ve Özgün Yönleri</h2>
+  </div>
+
+  <h3>TÜBİTAK Destekli Yerli Sanayi Projesi</h3>
+  <p>Çalışma, Türk firması Trex Dijital Akıllı Üretim Sistemleri A.Ş.’nin TÜBİTAK destekli dijital dönüşüm projesi kapsamında gerçekleştirilmiştir.</p>
+
+  <h3>Yerli Akademik Katkı</h3>
+  <p>İstanbul Okan Üniversitesi’nde Türk araştırmacı tarafından Türk danışman gözetiminde tamamlanmış bir doktora tezidir.</p>
+
+  <h3>Saha Verisi Yurt İçinden</h3>
+  <p>Sarıgözoğlu Bursa Pres Metal Fabrikası ve Castrol Madeni Yağlar Türkiye operasyonlarından toplam 64 katılımcıdan veri alınmıştır.</p>
+
+  <h3>Özgün Metodolojik Katkılar</h3>
+  <ul>
+    <li>Hiyerarşik tecrübe seviyesi puanlama sistemi.</li>
+    <li>Akıllı olmayan elektrikli el aletlerinin yerli mühendislikle akıllandırılması.</li>
+    <li>Ham piksel yerine MediaPipe ile çıkarılan 21 el eklem koordinatının kullanılması.</li>
+    <li>Sensör, kamera ve anket verisini tek modelde birleştiren çok kipli füzyon mimarisi.</li>
+    <li>CNN + LSTM + Attention hibrit modelinin operatör davranış sınıflandırmasına uyarlanması.</li>
+  </ul>
+
+  <p><strong>KVKK ve Etik Uyum:</strong> İstanbul Okan Üniversitesi Etik Kurulu’nun 10.05.2023 tarihli 166 numaralı kararıyla onaylanmıştır. Tüm katılımcılardan aydınlatılmış onam alınmış ve veriler kimliksizleştirilmiştir.</p>
+</section>
+
+<section id="yenilik">
+  <div class="section-heading">
+    <div class="section-number">04</div>
+    <h2>Yenilik ve Farklılıklar</h2>
+  </div>
+
+  <p>Literatürdeki insan aktivitesi tanıma çalışmalarının büyük kısmı tek tip veri kaynağına dayanırken, bu çalışma gerçek üretim ortamından gelen çok kipli verileri bütüncül bir yapay zekâ mimarisinde birleştirir.</p>
+
+  <ol>
+    <li><strong>Akıllandırma yaklaşımı:</strong> Mevcut el aletlerinin atılmadan sensör ve yazılım eklemeleriyle akıllandırılması.</li>
+    <li><strong>Üç kanallı veri füzyonu:</strong> IMU, elektrikli alet sensörleri, kamera koordinatları ve anket verilerinin birlikte kullanılması.</li>
+    <li><strong>Pikselsiz görüntü işleme:</strong> Ham kamera görüntüsü saklanmadan yalnızca 21 eklem koordinatının kullanılması.</li>
+    <li><strong>Özgün etiketleme formülü:</strong> Cohen’s Kappa κ &gt; 0.80 ile uzman görüşüyle uyumu kanıtlanmış hiyerarşik puanlama sistemi.</li>
+    <li><strong>Hibrit mimari:</strong> CNN, LSTM ve Attention bileşenlerinin operatör davranışı sınıflandırmasına uyarlanması.</li>
+    <li><strong>Gerçek üretim verisi:</strong> Laboratuvar veya sentetik veri yerine iki endüstriyel tesisten toplanan gerçek saha verisi.</li>
+    <li><strong>Bağımsız saha doğrulaması:</strong> Modelin daha önce hiç görmediği 12 dosyalık bağımsız test setinde %91.67 doğruluk.</li>
+  </ol>
+</section>
+
+<section id="yontem">
+  <div class="section-heading">
+    <div class="section-number">05</div>
+    <h2>Yöntem, Teknolojiler ve Araçlar</h2>
+  </div>
+
+  <p><strong>Sistem Akışı:</strong> Akıllandırılmış vidalama aletinden IMU ve elektriksel veriler toplanır. Kameradan gelen görüntü MediaPipe ile 21 el eklem koordinatına dönüştürülür. Sensör, koordinat ve anket verileri CNN + LSTM + Attention modeline verilerek operatör Acemi, Orta veya Uzman olarak sınıflandırılır.</p>
+
+  <h3>Donanım</h3>
+  <ul>
+    <li>MPU-9255 9 eksenli IMU sensörü.</li>
+    <li>Özel tasarım vidalama deney platformu.</li>
+    <li>Bulut eğitimi için NVIDIA Tesla T4 GPU.</li>
+    <li>Çıkarım için standart yerel bilgisayar.</li>
+  </ul>
+
+  <h3>Yazılım ve Kütüphaneler</h3>
+  <table>
+    <tr><th>Yazılım / Kütüphane</th><th>Kullanım Amacı</th></tr>
+    <tr><td>Python</td><td>Geliştirme dili</td></tr>
+    <tr><td>TensorFlow + Keras</td><td>Derin öğrenme model eğitimi</td></tr>
+    <tr><td>MediaPipe</td><td>El eklem noktası tespiti</td></tr>
+    <tr><td>NumPy, Pandas, SciPy</td><td>Veri işleme ve istatistik</td></tr>
+    <tr><td>Scikit-learn</td><td>Performans metrikleri ve validasyon</td></tr>
+    <tr><td>Matplotlib, Seaborn</td><td>Görselleştirme</td></tr>
+  </table>
+
+  <h3>Sayfada Kullanılacak Görseller</h3>
+  <div class="image-grid">
+    <div class="image-box">Tez Şekil 3.1<br>Trex Akıllı Sıkıcı</div>
+    <div class="image-box">Tez Şekil 3.4<br>MediaPipe El Eklem Noktaları</div>
+    <div class="image-box">Tez Şekil 3.24<br>CNN + LSTM + Attention Mimarisi</div>
+    <div class="image-box">Tez Şekil 3.13<br>Metodoloji Karar Ağacı</div>
+  </div>
+</section>
+
+<section id="etki">
+  <div class="section-heading">
+    <div class="section-number">06</div>
+    <h2>Etki Gücü</h2>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card"><strong>%91.67</strong><span>Bağımsız Test Doğruluğu</span></div>
+    <div class="stat-card"><strong>%82.2</strong><span>Ortalama Karar Güveni</span></div>
+    <div class="stat-card"><strong>3</strong><span>Karşılaştırılan Model</span></div>
+  </div>
+
+  <p>CNN + LSTM + Attention modeli, BiLSTM ve 1D CNN modellerini açık ara geride bırakarak bağımsız test setinde %91.67 doğruluk elde etmiştir.</p>
+
+  <table>
+    <tr><th>Sınıf</th><th>Kesinlik</th><th>Duyarlılık</th><th>F1-Skoru</th></tr>
+    <tr><td>Acemi</td><td>0.93</td><td>0.91</td><td>0.92</td></tr>
+    <tr><td>Orta</td><td>0.98</td><td>0.88</td><td>0.93</td></tr>
+    <tr><td>Uzman</td><td>0.86</td><td>0.98</td><td>0.92</td></tr>
+  </table>
+
+  <p>Bu sistem, üretimde insan kaynağı kalitesinin nesnel ölçümünü mümkün kılarak ürün kalitesi, iş güvenliği ve operatör eğitimi alanlarında yatay etki üretir.</p>
+</section>
+
+<section id="katma">
+  <div class="section-heading">
+    <div class="section-number">07</div>
+    <h2>Başvuru Alanında Yaratılan Fayda ve Katma Değer</h2>
+  </div>
+
+  <ul>
+    <li><strong>Çok kipli füzyon mimarisi:</strong> Sensör, görüntü ve anket verisinin tek modelde birleştirilmesi.</li>
+    <li><strong>Hibrit mimari uyarlaması:</strong> CNN + LSTM + Attention birleşiminin endüstriyel operatör davranış sınıflandırmasına taşınması.</li>
+    <li><strong>Gizlilik koruyucu derin öğrenme:</strong> Ham kamera görüntüsü yerine koordinat dizilerinin kullanılması.</li>
+    <li><strong>Endüstriyel veriyle eğitilmiş model:</strong> İki Türk fabrikasından gerçek koşullarda toplanan veriyle doğrulama yapılması.</li>
+  </ul>
+</section>
+
+<section id="toplumsal">
+  <div class="section-heading">
+    <div class="section-number">08</div>
+    <h2>Yaratılan Toplumsal Fayda ve Katma Değer</h2>
+  </div>
+
+  <ul>
+    <li><strong>İş güvenliği:</strong> Operatör tecrübesinin nesnel ölçümü, yanlış görev atamasından doğan riskleri azaltır.</li>
+    <li><strong>Mesleki eğitim kalitesi:</strong> Beceri gelişimi veri tabanlı ve adil biçimde takip edilebilir.</li>
+    <li><strong>İstihdam fırsat eşitliği:</strong> Sübjektif önyargılara dayalı işe alım kararları azaltılabilir.</li>
+    <li><strong>Atık donanımın azaltılması:</strong> Mevcut el aletleri akıllandırılarak dijital dönüşüm maliyeti düşürülür.</li>
+    <li><strong>Mahremiyet:</strong> Kamera görüntülerinin ham hali saklanmaz.</li>
+    <li><strong>Yerli yapay zekâ ekosistemi:</strong> TÜBİTAK destekli sanayi-akademi iş birliğinin somut çıktısıdır.</li>
+  </ul>
+</section>
+
+<section id="basari">
+  <div class="section-heading">
+    <div class="section-number">09</div>
+    <h2>Projenin Başarısı, Ölçülebilirliği ve Sürdürülebilirliği</h2>
+  </div>
+
+  <h3>Doğrulama ve Ölçülebilirlik</h3>
+  <ul>
+    <li>Trex Dijital TÜBİTAK destekli proje kapsamında geliştirilmiştir.</li>
+    <li>İstanbul Okan Üniversitesi’nde doktora tezi olarak Aralık 2025’te savunulmuştur.</li>
+    <li>Sarıgözoğlu ve Castrol fabrikalarında 64 katılımcıyla gerçek üretim koşullarında doğrulanmıştır.</li>
+    <li>Eğitimde kullanılmayan 12 dosyada %91.67 doğruluk elde edilmiştir.</li>
+    <li>Cohen’s Kappa κ &gt; 0.80 ile etiketleme yönteminin uzman görüşüyle uyumu kanıtlanmıştır.</li>
+  </ul>
+
+  <h3>Sürdürülebilirlik</h3>
+  <ul>
+    <li>Açık kaynaklı teknolojiler kullanılmıştır: Python, TensorFlow, MediaPipe.</li>
+    <li>Mevcut donanıma uyumludur; el aletlerinin atılması gerekmez.</li>
+    <li>Modüler mimari sayesinde sensör, kamera veya anket bileşenlerinden biri olmadığında da genişletilebilir.</li>
+    <li>Yol haritasında Edge AI entegrasyonu, çevrimiçi öğrenme ve farklı el aleti türlerine genişletme bulunmaktadır.</li>
+  </ul>
+</section>
+
+<section id="sunus">
+  <div class="section-heading">
+    <div class="section-number">10</div>
+    <h2>Proje Başvurusunun Sunuş Biçimi</h2>
+  </div>
+
+  <p>Proje, jüri ve genel kitleye üç ana sunum kanalıyla aktarılmaktadır.</p>
+
+  <h3>a) Proje Web Sitesi</h3>
+  <p>Teknik olmayan kullanıcıların da anlayabileceği sade dil, görsel destekli anlatım ve değerlendirme ölçütleriyle uyumlu yapı içerir.</p>
+
+  <h3>b) 3 Dakikalık Tanıtım Videosu</h3>
+  <p>Projenin problemi, çözümü, saha uygulaması ve doğrulanmış sonuçları YouTube’da kamuya açık kısa tanıtım videosu ile aktarılır.</p>
+
+  <h3>c) Tez PDF Bağlantısı</h3>
+  <p>Detaylı incelemek isteyen jüri üyeleri için tezin tam metnine erişim sağlanır.</p>
+</section>
+
+<section>
+  <div class="section-heading">
+    <div class="section-number">EK</div>
+    <h2>Sayfa Altı Künye</h2>
+  </div>
+
+  <p><strong>Etik:</strong> İstanbul Okan Üniversitesi Etik Kurulu onaylıdır. Tarih: 10.05.2023, karar no: 166. KVKK uyumludur ve tüm katılımcılardan aydınlatılmış onam alınmıştır.</p>
+
+  <p><strong>İş Birlikleri:</strong> Trex Dijital Akıllı Üretim Sistemleri A.Ş., TÜBİTAK, İstanbul Okan Üniversitesi, Sarıgözoğlu Hidrolik Makina, Castrol Madeni Yağlar.</p>
+
+  <div class="cta">
+    <h3>Etkileyici Sayılar</h3>
+    <p>64 katılımcı · 104.253 satır veri · 3.326 zaman penceresi · 21 el eklem noktası · %91.67 bağımsız test doğruluğu</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>Kader Nikbay Oylum</strong></p>
+  <p>İstanbul Okan Üniversitesi · Bilgisayar Mühendisliği Doktora Programı</p>
+  <p>İletişim: kaderoylum@trex.com.tr / LinkedIn: linkedin.com/in/dr-kader-nikbay-oylum-0540a4161</p>
+</footer>
+
+</body>
+</html>
