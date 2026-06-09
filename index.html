@@ -304,6 +304,42 @@
         font-size: 20px;
       }
     }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding: 30px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(7, 24, 47, 0.92);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      max-width: 92%;
+      max-height: 88%;
+      border-radius: 18px;
+      background: white;
+      padding: 10px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .close-lightbox {
+      position: fixed;
+      top: 25px;
+      right: 35px;
+      color: white;
+      font-size: 42px;
+      font-weight: 900;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -580,12 +616,38 @@
 </section>
 
 </main>
-
+<div class="lightbox" id="lightbox">
+  <span class="close-lightbox" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img" src="" alt="Büyütülmüş görsel">
+</div>
 <footer>
   <p><strong>Kader Nikbay Oylum</strong></p>
   <p>İstanbul Okan Üniversitesi · Bilgisayar Mühendisliği Doktora Programı</p>
   <p>İletişim: kaderoylum@trex.com.tr / LinkedIn: linkedin.com/in/dr-kader-nikbay-oylum-0540a4161</p>
 </footer>
+<script>
+  const galleryImages = document.querySelectorAll('.image-box img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
 
+  galleryImages.forEach(function(img) {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function() {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+  }
+
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+</script>
 </body>
 </html>
