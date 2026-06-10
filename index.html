@@ -560,21 +560,21 @@ P<!DOCTYPE html>
   <p>Çalışma, Türk firması Trex Dijital Akıllı Üretim Sistemleri A.Ş.’nin TÜBİTAK destekli dijital dönüşüm projesi kapsamında gerçekleştirilmiştir.</p>
 
   <h3>Yerli Akademik Katkı</h3>
-  <p>İstanbul Okan Üniversitesi’nde Türk araştırmacı tarafından Türk danışman gözetiminde tamamlanmış bir doktora tezidir.</p>
+  <p>İstanbul Okan Üniversitesi’nde Türk araştırmacı tarafından Türk danışman gözetiminde tamamlanmış bir doktora tezidir. Fikri ve sınai mülkiyet hakları araştırmacıya ve endüstriyel ortağına aittir.</p>
 
   <h3>Saha Verisi Yurt İçinden</h3>
-  <p>Sarıgözoğlu Bursa Pres Metal Fabrikası ve Castrol Madeni Yağlar Türkiye operasyonlarından toplam 64 katılımcıdan veri alınmıştır.</p>
+  <p>Sarıgözoğlu Bursa Pres Metal Fabrikası ve Castrol Madeni Yağlar Türkiye operasyonlarından toplam 64 katılımcıdan veri alınmıştır. Veriler hiçbir aşamada yurt dışına çıkarılmamıştır.</p>
 
   <h3>Özgün Metodolojik Katkılar</h3>
   <ul>
-    <li>Hiyerarşik tecrübe seviyesi puanlama sistemi.</li>
+    <li>Hiyerarşik tecrübe seviyesi puanlama sistemi (deneyim, profesyonel kullanım, çalışma süresi ve kıdem boyutlarını birleştiren özgün etiketleme yaklaşımı)</li>
     <li>Akıllı olmayan elektrikli el aletlerinin yerli mühendislikle akıllandırılması.</li>
-    <li>Ham piksel yerine MediaPipe ile çıkarılan 21 el eklem koordinatının kullanılması.</li>
+    <li>Kameradan ham piksel değil, MediaPipe ile çıkarılan 21 eklem koordinatının kullanılması (gizlilik koruyucu yaklaşım)</li>
     <li>Sensör, kamera ve anket verisini tek modelde birleştiren çok kipli füzyon mimarisi.</li>
-    <li>CNN + LSTM + Attention hibrit modelinin operatör davranış sınıflandırmasına uyarlanması.</li>
+    <li>CNN + LSTM + Attention hibrit modelinin operatör davranış sınıflandırması problemine uyarlanması.</li>
   </ul>
 
-  <p><strong>KVKK ve Etik Uyum:</strong> İstanbul Okan Üniversitesi Etik Kurulu’nun 10.05.2023 tarihli 166 numaralı kararıyla onaylanmıştır. Tüm katılımcılardan aydınlatılmış onam alınmış ve veriler kimliksizleştirilmiştir.</p>
+  <p><strong>KVKK ve Etik Uyum:</strong> İstanbul Okan Üniversitesi Etik Kurulu’nun 10.05.2023 tarihli 166 numaralı kararıyla onaylanmıştır. Tüm katılımcılardan aydınlatılmış onam alınmış, veriler kimliksizleştirilmiştir.</p>
 </section>
 
 <section id="yenilik">
@@ -583,14 +583,14 @@ P<!DOCTYPE html>
     <h2>Yenilik ve Farklılıklar</h2>
   </div>
 
-  <p>Literatürdeki insan aktivitesi tanıma çalışmalarının büyük kısmı tek tip veri kaynağına dayanırken, bu çalışma gerçek üretim ortamından gelen çok kipli verileri bütüncül bir yapay zekâ mimarisinde birleştirir.</p>
+  <p>Literatürdeki insan aktivitesi tanıma çalışmalarının büyük kısmı tek tip veri kaynağına (yalnızca akıllı telefon ivmeölçeri veya yalnızca kamera) dayanırken, bu çalışma gerçek üretim ortamından gelen çok kipli verileri bütüncül bir yapay zekâ mimarisinde birleştirir.</p>
 
   <ol>
-    <li><strong>Akıllandırma yaklaşımı:</strong> Mevcut el aletlerinin atılmadan sensör ve yazılım eklemeleriyle akıllandırılması.</li>
-    <li><strong>Üç kanallı veri füzyonu:</strong> IMU, elektrikli alet sensörleri, kamera koordinatları ve anket verilerinin birlikte kullanılması.</li>
+    <li><strong>Akıllandırma yaklaşımı:</strong> Mevcut el aletlerinin sürdürülebilirlik çerçevesinde atılmadan sensör ve yazılım eklemeleriyle akıllandırılması.</li>
+    <li><strong>Üç kanallı veri füzyonu:</strong> IMU, elektrikli alet sensörleri, kamera koordinatları ve anket verilerinin birlikte kullanılması. Literatürde karşılaşılan nadir bir kombinasyondur.</li>
     <li><strong>Pikselsiz görüntü işleme:</strong> Ham kamera görüntüsü saklanmadan yalnızca 21 eklem koordinatının kullanılması.</li>
     <li><strong>Özgün etiketleme formülü:</strong> Cohen’s Kappa κ &gt; 0.80 ile uzman görüşüyle uyumu kanıtlanmış hiyerarşik puanlama sistemi.</li>
-    <li><strong>Hibrit mimari:</strong> CNN, LSTM ve Attention bileşenlerinin operatör davranışı sınıflandırmasına uyarlanması.</li>
+    <li><strong>Hibrit mimari:</strong> CNN (lokal örüntü) + LSTM (zamansal bağımlılık) + Attention (kritik an odaklama) üçlüsünün operatör davranış sınıflandırmasına uyarlanması.</li>
     <li><strong>Gerçek üretim verisi:</strong> Laboratuvar veya sentetik veri yerine iki endüstriyel tesisten toplanan gerçek saha verisi.</li>
     <li><strong>Bağımsız saha doğrulaması:</strong> Modelin daha önce hiç görmediği 12 dosyalık bağımsız test setinde %91.67 doğruluk.</li>
   </ol>
