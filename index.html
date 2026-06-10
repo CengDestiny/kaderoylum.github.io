@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
@@ -10,8 +12,8 @@
       --primary: #07182f;
       --secondary: #0f766e;
       --accent: #22c55e;
-      --gold: #f59e0b;
-      --light: #f7f4ef;
+      --gold: #b7791f;
+      --light: #edf4ef;
       --white: #ffffff;
       --text: #1e293b;
       --muted: #64748b;
@@ -30,74 +32,114 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f7f4ef;
+      background: var(--light);
       color: var(--text);
       line-height: 1.7;
     }
 
-    .hero{
-      width:min(1300px,92%);
-      margin:auto;
-      padding:80px 0;
-      display:grid;
-      grid-template-columns:1.3fr 0.9fr;
-      gap:70px;
-      align-items:start;
+    .hero {
+      width: min(1300px, 92%);
+      margin: auto;
+      padding: 80px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 70px;
     }
 
-    .hero-badge{
-      color:#b7791f;
-      font-size:14px;
-      font-weight:800;
-      letter-spacing:3px;
-      margin-bottom:25px;
+    .hero-left {
+      flex: 1;
+      padding-top: 20px;
     }
 
-    .hero-left h1{
-      font-size:88px;
-      line-height:0.95;
-      color:#07182f;
-      margin-bottom:30px;
-      font-weight:900;
+    .hero-badge {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 28px;
+      text-transform: uppercase;
     }
 
-    .hero-left p{
-      font-size:22px;
-      color:#64748b;
-      max-width:800px;
+    .hero-left h1 {
+      font-size: clamp(54px, 6.7vw, 88px);
+      line-height: 0.95;
+      color: var(--primary);
+      margin-bottom: 32px;
+      font-weight: 900;
+      letter-spacing: -3px;
+      max-width: 830px;
     }
 
-    .proje-kimligi{
-      background:#ffffff;
-      border:1px solid #e2e8f0;
-      border-radius:35px;
-      padding:40px;
-      box-shadow:0 20px 40px rgba(15,23,42,.10);
+    .hero-left p {
+      font-size: 22px;
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 28px;
     }
 
-    .proje-kimligi h2{
-      margin-bottom:25px;
-      color:#07182f;
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
     }
 
-    .kimlik-item{
-      border-bottom:1px solid #e2e8f0;
-      padding:22px 0;
+    .hero-pill {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 12px 18px;
+      color: var(--primary);
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(15,23,42,0.06);
     }
 
-    .kimlik-item span{
-      display:block;
-      font-size:14px;
-      font-weight:800;
-      color:#64748b;
-      letter-spacing:2px;
-      margin-bottom:10px;
+    .proje-kimligi {
+      width: 430px;
+      min-width: 430px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 35px;
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(15,23,42,.10);
     }
 
-    .kimlik-item p{
-      font-size:20px;
-      color:#1f2937;
-      font-weight:600;
+    .proje-kimligi h2 {
+      margin-bottom: 25px;
+      color: var(--primary);
+      font-size: 40px;
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .kimlik-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .kimlik-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .kimlik-item span {
+      display: block;
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--muted);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .kimlik-item p {
+      font-size: 19px;
+      color: #1f2937;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.45;
     }
 
     nav {
@@ -269,6 +311,7 @@
     .image-box a {
       display: block;
       cursor: zoom-in;
+      text-decoration: none;
     }
 
     .image-box img {
@@ -319,23 +362,30 @@
       color: #dbeafe;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
       .hero {
-        grid-template-columns: 1fr;
-        gap: 35px;
+        flex-direction: column;
+        gap: 36px;
         padding: 45px 0;
       }
 
+      .hero-left {
+        padding-top: 0;
+      }
+
+      .proje-kimligi {
+        width: 100%;
+        min-width: 100%;
+        padding: 30px;
+      }
+
       .hero-left h1 {
-        font-size: 46px;
+        font-size: 48px;
+        letter-spacing: -1.5px;
       }
 
       .hero-left p {
         font-size: 18px;
-      }
-
-      .proje-kimligi {
-        padding: 28px;
       }
 
       section {
@@ -364,81 +414,75 @@
   <div class="hero-left">
 
     <div class="hero-badge">
-      TBD İSTANBUL BİLİŞİM YILDIZLARI 2026 ADAY PROJESİ
+      TBD İstanbul Bilişim Yıldızları 2026 Aday Projesi
     </div>
 
     <h1>
-      Endüstriyel Operatör Deneyim Sınıflandırması İçin
-      Çok Kipli Yapay Zekâ Sistemi
+      Endüstriyel Operatör Deneyim Sınıflandırması İçin Çok Kipli Yapay Zekâ Sistemi
     </h1>
 
     <p>
-      Sensör, kamera ve anket verilerini bir araya getirerek
-      operatörlerin deneyim düzeylerini sınıflandıran,
-      gerçek üretim verileri ile doğrulanmış doktora tez çalışması.
+      Sensör, kamera ve anket verilerini bir araya getirerek operatörlerin deneyim düzeylerini sınıflandıran, gerçek üretim verileri ile doğrulanmış doktora tez çalışması.
     </p>
+
+    <div class="hero-highlights">
+      <div class="hero-pill">%91.67 Bağımsız Test Doğruluğu</div>
+      <div class="hero-pill">64 Katılımcı</div>
+      <div class="hero-pill">104.253 Satır Veri</div>
+    </div>
 
   </div>
 
-  <div class="proje-kimligi">
+  <aside class="proje-kimligi">
 
     <h2>Proje Kimliği</h2>
 
     <div class="kimlik-item">
-      <span>BAŞVURU DÜZEYİ</span>
+      <span>Başvuru Düzeyi</span>
       <p>Üniversite Projeleri</p>
     </div>
 
     <div class="kimlik-item">
-      <span>BAŞVURU ALANI</span>
+      <span>Başvuru Alanı</span>
       <p>Büyük Veri, Yapay Zekâ, Makine Öğrenmesi ve Veri Madenciliği</p>
     </div>
 
     <div class="kimlik-item">
-      <span>ÖĞRENCİ</span>
+      <span>Öğrenci</span>
       <p>Kader Nikbay Oylum</p>
     </div>
 
     <div class="kimlik-item">
-      <span>DANIŞMAN</span>
+      <span>Danışman</span>
       <p>Prof. Dr. Turgay Tugay BİLGİN</p>
     </div>
 
     <div class="kimlik-item">
-      <span>ÜNİVERSİTE</span>
-      <p>
-        İstanbul Okan Üniversitesi<br>
-        Bilgisayar Mühendisliği Doktora Programı
-      </p>
+      <span>Üniversite</span>
+      <p>İstanbul Okan Üniversitesi<br>Bilgisayar Mühendisliği Doktora Programı</p>
     </div>
 
     <div class="kimlik-item">
-      <span>ENDÜSTRİYEL ORTAK</span>
-      <p>
-        Trex Dijital Akıllı Üretim Sistemleri A.Ş.<br>
-        (TÜBİTAK Destekli Proje)
-      </p>
+      <span>Endüstriyel Ortak</span>
+      <p>Trex Dijital Akıllı Üretim Sistemleri A.Ş.<br>(TÜBİTAK Destekli Proje)</p>
     </div>
 
     <div class="kimlik-item">
-      <span>SAHA VERİ ORTAKLARI</span>
-      <p>
-        Sarıgözoğlu Hidrolik Makina<br>
-        Castrol Madeni Yağlar
-      </p>
+      <span>Saha Veri Ortakları</span>
+      <p>Sarıgözoğlu Hidrolik Makina<br>Castrol Madeni Yağlar</p>
     </div>
 
     <div class="kimlik-item">
-      <span>TEZ TARİHİ</span>
+      <span>Tez Tarihi</span>
       <p>Aralık 2025</p>
     </div>
 
     <div class="kimlik-item">
-      <span>İLETİŞİM</span>
-      <p>e-posta / LinkedIn</p>
+      <span>İletişim</span>
+      <p>kaderoylum@trex.com.tr<br>LinkedIn: dr-kader-nikbay-oylum</p>
     </div>
 
-  </div>
+  </aside>
 
 </header>
 
@@ -601,6 +645,8 @@
       <p>Metodoloji Karar Ağacı</p>
     </div>
   </div>
+
+  <p class="image-note">Not: Görsele tıklayınca büyük hali yeni sekmede açılır.</p>
 </section>
 
 <section id="etki">
@@ -725,3 +771,8 @@
 
 </body>
 </html>
+'''
+
+path = Path("/mnt/data/index_hazir_son.html")
+path.write_text(html, encoding="utf-8")
+path.as_posix()
