@@ -35,56 +35,70 @@
       line-height: 1.7;
     }
 
-    header {
-      background: linear-gradient(135deg, #07182f, #0f766e);
-      color: white;
-      padding: 70px 8%;
+    .hero{
+      width:min(1300px,92%);
+      margin:auto;
+      padding:80px 0;
+      display:grid;
+      grid-template-columns:1.3fr 0.9fr;
+      gap:70px;
+      align-items:start;
     }
 
-    header h1 {
-      font-size: clamp(38px, 6vw, 70px);
-      line-height: 1.1;
-      margin-bottom: 25px;
-      font-weight: 900;
+    .hero-badge{
+      color:#b7791f;
+      font-size:14px;
+      font-weight:800;
+      letter-spacing:3px;
+      margin-bottom:25px;
     }
 
-    header p {
-      font-size: 21px;
-      max-width: 1000px;
-      color: #dbeafe;
+    .hero-left h1{
+      font-size:88px;
+      line-height:0.95;
+      color:#1f2937;
+      margin-bottom:30px;
+      font-weight:900;
     }
 
-    .badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.35);
-      padding: 10px 20px;
-      border-radius: 999px;
-      font-weight: 800;
-      margin-bottom: 25px;
+    .hero-left p{
+      font-size:22px;
+      color:#64748b;
+      max-width:800px;
     }
 
-    .hero-grid {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
+    .proje-kimligi{
+      background:white;
+      border:1px solid #e2e8f0;
+      border-radius:35px;
+      padding:40px;
+      box-shadow:0 20px 40px rgba(15,23,42,.08);
     }
 
-    .hero-card {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 18px;
-      padding: 18px;
+    .proje-kimligi h2{
+      margin-bottom:25px;
+      color:#1f2937;
     }
 
-    .hero-card strong {
-      display: block;
-      color: #bbf7d0;
-      font-size: 14px;
-      margin-bottom: 5px;
+    .kimlik-item{
+      border-bottom:1px solid #e2e8f0;
+      padding:22px 0;
     }
 
+    .kimlik-item span{
+      display:block;
+      font-size:14px;
+      font-weight:800;
+      color:#64748b;
+      letter-spacing:2px;
+      margin-bottom:10px;
+    }
+
+    .kimlik-item p{
+      font-size:20px;
+      color:#1f2937;
+      font-weight:600;
+    }
     nav {
       position: sticky;
       top: 0;
